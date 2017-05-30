@@ -1,0 +1,17 @@
+.message-form-text{
+  height: auto;
+}
+
+.message-form-text div{
+  height: auto;
+}
+
+.message-form{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.send-btn-wrapper{
+  padding-left: 0;
+}

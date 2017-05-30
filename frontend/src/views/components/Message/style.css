@@ -1,0 +1,18 @@
+.message{
+  border: 1px solid #DDD;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px 0px;
+  background: #FFFFFF;
+}
+
+.message-name{
+  font-weight: bold;
+  display: inline-block;
+}
+
+.message-time{
+  color: #999;
+  float: right;
+  display: inline-block;
+}
