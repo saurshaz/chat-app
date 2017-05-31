@@ -7,7 +7,7 @@ export default class MessageForm extends Component {
     this.refs.msgInput.focus();
   }
   onInputKeyPress(e) {
-    if (e.key == 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       this.sendMessage();
     }

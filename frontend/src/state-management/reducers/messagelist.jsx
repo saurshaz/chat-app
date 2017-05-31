@@ -20,11 +20,6 @@ export default function messageList(state = initialState, action) {
         }),
       };
 
-    case actionTypes.TOGGLE_USERS_LIST:
-      return { ...state,
-        hidden: !state.hidden,
-      };
-
     default:
       return state;
   }

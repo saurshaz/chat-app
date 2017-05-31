@@ -6,8 +6,7 @@ import * as actionCreators from '../../../state-management/actions/actionCreator
 // import './style.css'
 import {
   DevPanel,
-  MessageWindow,
-  UsersList } from '../../components';
+  MessageWindow } from '../../components';
 
 class App extends Component {
 
@@ -15,8 +14,6 @@ class App extends Component {
     const {
       sockets,
       messageList,
-      user,
-      usersList,
       actions,
     } = this.props;
 
@@ -48,8 +45,6 @@ App.propTypes = {
   actions: React.PropTypes.object.isRequired,
   messageList: React.PropTypes.object.isRequired,
   sockets: React.PropTypes.object.isRequired,
-  user: React.PropTypes.object.isRequired,
-  usersList: React.PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => Object.assign({}, state);

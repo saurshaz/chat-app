@@ -16,7 +16,6 @@ export default class Message extends Component {
         <div className="message-time small hidden-xs">{time}</div>
         <div className="message-text">{text}</div>
         <div className="clearfix" />
-        <br />
       </Card>
     );
   }

@@ -5,4 +5,3 @@ export MessageList from './MessageList';
 export Message from './Message';
 export Login from './Login';
 export NotFound from './NotFound';
-export UsersList from './UsersList';

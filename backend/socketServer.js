@@ -70,8 +70,6 @@ module.exports = (server) => {
     });
 
     socket.on('disconnect', () => {
-      // const time = new Date();
-      // const rawTime = time.getTime();
       const uid = socket.uid;
       const nickname = socket.nickname;
 
@@ -102,23 +100,5 @@ module.exports = (server) => {
       messages.push(message);
       io.emit('messageReceived', message);
     });
-
-    // socket.on('nicknameChange', (msg) => {
-    //   let nicknameTemp = msg.nickname;
-    //
-    //   nicknameTemp = nicknameTemp.length > 32 ? nicknameTemp.slice(0, 31) : nicknameTemp;
-    //
-    //   socket.nickname = clients[socket.uid].nickname;
-    //   socket.nickname = nicknameTemp;
-    //
-    //   socket.emit('nicknameChangeSuccess', {
-    //     nickname: socket.nickname
-    //   });
-    //
-    //   socket.broadcast.emit('userChangedNickname', {
-    //     nickname: socket.nickname,
-    //     uid: socket.uid
-    //   });
-    // });
   });
 };

@@ -44,21 +44,6 @@ const applySocketCallbacks = (socket, dispatch) => {
       payload: msg,
     });
   });
-
-  socket.on('nicknameChangeSuccess', (msg) => {
-    localStorage.nickname = msg.nickname;
-    dispatch({
-      type: actionTypes.CHANGE_NICKNAME_SUCCESS,
-      payload: msg.nickname,
-    });
-  });
-
-  socket.on('userChangedNickname', (msg) => {
-    dispatch({
-      type: actionTypes.USER_CHANGED_NICKNAME,
-      payload: msg,
-    });
-  });
 };
 
 export const socketsConnect = () => (dispatch) => {
@@ -85,40 +70,21 @@ export const socketsSend = (msg) => (dispatch, getState) => {
   });
 };
 
-export function socketsDisconnect() {
-  return (dispatch, getState) => {
-    getState().sockets.socket.disconnect();
-    dispatch({
-      type: actionTypes.DISCONNECT,
-    });
-  };
-}
+export const socketsDisconnect = () => (dispatch, getState) => {
+  getState().sockets.socket.disconnect();
+  dispatch({
+    type: actionTypes.DISCONNECT,
+  });
+};
 
-export function changeNickname(newNick) {
-  return (dispatch, getState) => {
-    dispatch({
-      type: actionTypes.CHANGE_NICKNAME_REQUEST,
-    });
-    getState().sockets.socket.emit('nicknameChange', {
-      nickname: newNick.length > 32 ? newNick.slice(0, 31) : newNick,
-    });
-  };
-}
+export const showNicknameForm = () => ({
+  type: actionTypes.SHOW_NICKNAME_FORM,
+});
 
-export function showNicknameForm() {
-  return {
-    type: actionTypes.SHOW_NICKNAME_FORM,
-  };
-}
+export const hideNicknameForm = () => ({
+  type: actionTypes.HIDE_NICKNAME_FORM,
+});
 
-export function hideNicknameForm() {
-  return {
-    type: actionTypes.HIDE_NICKNAME_FORM,
-  };
-}
-
-export function toggleUsersList() {
-  return {
-    type: actionTypes.TOGGLE_USERS_LIST,
-  };
-}
+export const toggleUsersList = () => ({
+  type: actionTypes.TOGGLE_USERS_LIST,
+});
