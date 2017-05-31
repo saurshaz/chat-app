@@ -11,7 +11,7 @@ export default class Message extends Component {
 
 
     return (
-      <Card>
+      <Card style={{ padding: '12px', margin: '1%' }}>
         <div className="message-name">{name}</div>
         <div className="message-time small hidden-xs">{time}</div>
         <div className="message-text">{text}</div>

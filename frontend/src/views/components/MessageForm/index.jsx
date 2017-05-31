@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Card, TextField } from 'material-ui';
+import { Card, TextField, RaisedButton } from 'material-ui';
 import './style.css';
 
 export default class MessageForm extends Component {
@@ -39,10 +39,6 @@ trim();
           ref="msgInput"
           onKeyPress={this.onInputKeyPress.bind(this)}
         />
-        <div
-          className="btn btn-primary center-block "
-          onClick={::this.handleSendBtnClick}
-        >{'Send'}</div>
       </Card>
     );
   }

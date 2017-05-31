@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { Card } from 'material-ui/Card';
+import { Card, Paper } from 'material-ui/Card';
 import { Message } from '..';
 import './style.css';
 
@@ -31,12 +31,14 @@ export default class MessageList extends Component {
 
 
       return (
-        <Message
-          key={index}
-          name={name}
-          text={text}
-          time={time}
-        />
+        <Card style={{ marginBottom: '11px' }} >
+          <Message
+            key={index}
+            name={name}
+            text={text}
+            time={time}
+          />
+        </Card>
       );
     });
 
