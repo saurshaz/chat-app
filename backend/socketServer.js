@@ -103,22 +103,22 @@ module.exports = (server) => {
       io.emit('messageReceived', message);
     });
 
-    socket.on('nicknameChange', (msg) => {
-      let nicknameTemp = msg.nickname;
-
-      nicknameTemp = nicknameTemp.length > 32 ? nicknameTemp.slice(0, 31) : nicknameTemp;
-
-      socket.nickname = clients[socket.uid].nickname;
-      socket.nickname = nicknameTemp;
-
-      socket.emit('nicknameChangeSuccess', {
-        nickname: socket.nickname
-      });
-
-      socket.broadcast.emit('userChangedNickname', {
-        nickname: socket.nickname,
-        uid: socket.uid
-      });
-    });
+    // socket.on('nicknameChange', (msg) => {
+    //   let nicknameTemp = msg.nickname;
+    //
+    //   nicknameTemp = nicknameTemp.length > 32 ? nicknameTemp.slice(0, 31) : nicknameTemp;
+    //
+    //   socket.nickname = clients[socket.uid].nickname;
+    //   socket.nickname = nicknameTemp;
+    //
+    //   socket.emit('nicknameChangeSuccess', {
+    //     nickname: socket.nickname
+    //   });
+    //
+    //   socket.broadcast.emit('userChangedNickname', {
+    //     nickname: socket.nickname,
+    //     uid: socket.uid
+    //   });
+    // });
   });
 };

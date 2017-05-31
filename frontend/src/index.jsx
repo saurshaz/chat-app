@@ -41,7 +41,7 @@ ReactDOM.render((
   <Provider store={store}>
     <Router>
       <MuiThemeProvider muiTheme={muiTheme}>
-        <div>
+        <Paper>
           <Nav />
           <Route
             component={App}
@@ -51,7 +51,7 @@ ReactDOM.render((
             component={Login}
             path="/login"
           />
-        </div>
+        </Paper>
       </MuiThemeProvider>
     </Router>
   </Provider>
