@@ -4,6 +4,7 @@ FROM node:7.3.0
 RUN apt-get update -y
 RUN echo `node -v`
 RUN npm i -g supervisor yarn
+RUN npm i -g webpack-dev-server
 
 #workaround to mount the directory for dev without having to rerun npm i
 RUN rm -rf /dist/
@@ -19,22 +20,3 @@ ADD . /dist
 # CMD [ "npm", "run", "start" ]
 
 EXPOSE 8080
-
-
-# # Create app directory
-# RUN mkdir -p /frontend
-# WORKDIR /frontend
-
-
-# # Bundle app source
-# COPY . /frontend
-# RUN yarn install
-
-# WORKDIR /frontend
-# # Make everything available for start
-# ADD . /frontend
-
-
-# EXPOSE 8080
-
-# # CMD [ "npm", "run", "start" ]

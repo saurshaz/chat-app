@@ -28,7 +28,7 @@
     "url": "https://github.com/saurshaz/chat-app/issues"
   },
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server  --hot --host localhost --port 8080 --env dev"
+    "start": "./node_modules/.bin/webpack-dev-server  --hot --host 0.0.0.0 --port 8080 --env dev"
   },
   "dependencies": {
     "autoprefixer": "6.7.3",
